@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+using MarkdownTableEditor.Extensions;
+
 namespace MarkdownTableEditor
 {
 	public partial class ToolForm : Form
@@ -61,41 +63,25 @@ namespace MarkdownTableEditor
 
 			bool first = true;
 			
-			foreach ( DataRow row in this.datasource.Rows )
+			foreach ( DataRow row in this.datasource.asRows() )
 			{
-				sb.Append( "|" );
-				foreach ( DataColumn col in this.datasource.Columns )
-				{
-					string text = row[col] as string;
-					sb.Append( text );
-					sb.Append( "|" );
-				}
-				sb.AppendLine();
-
+				var cols = row.asColumns().Select( x => x as string );
+				
+				sb.AppendLine( cols.arounds( "|" ) );
+				
 
 				// 初回のみ以下実行。
 				if ( first )
 				{
 					first = false;
-
-					List<string> token = new List<string>();
-					for ( int i = 0; i < this.datasource.Columns.Count; i++ )
-					{
-						token.Add( "----" );
-					}
 					
+					var tokens = "----".repeat( this.datasource.Columns.Count );
 
-					sb.Append( "|" );
-					foreach ( string t in token )
-					{
-						sb.Append( t );
-						sb.Append( "|" );
-					}
-					sb.AppendLine();
+					sb.AppendLine( tokens.arounds( "|" ) );
 				}
 			}
 
-			string markdown= sb.ToString();
+			string markdown = sb.ToString();
 			return markdown;
 		}
 		#endregion
