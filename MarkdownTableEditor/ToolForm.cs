@@ -33,6 +33,11 @@ namespace MarkdownTableEditor
 
 		private void ToolForm_Load( object sender, EventArgs e )
 		{
+			TextBox[] txts = {
+				this.txtMarkdownTest
+			};
+			txts.ctrl_a();
+
 			this.dgvInputTable.DataSource = this.datasource;
 		}
 		#endregion
@@ -40,7 +45,7 @@ namespace MarkdownTableEditor
 		#region LoadData
 		private void btnLoadData_Click( object sender, EventArgs e )
 		{
-
+			MessageBox.Show( "まだ実装してないんや(´・ω・`)" );
 		}
 		#endregion
 
