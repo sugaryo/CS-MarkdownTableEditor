@@ -102,6 +102,6 @@ namespace MarkdownTableEditor.Extensions
 		{
 			return s.split( option, Environment.NewLine );
 		}
-
+		
 	}
 }

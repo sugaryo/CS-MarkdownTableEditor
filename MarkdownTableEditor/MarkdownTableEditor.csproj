@@ -46,7 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\controls.cs" />
     <Compile Include="Extensions\extensions.cs" />
+    <Compile Include="LoadDataDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadDataDialog.Designer.cs">
+      <DependentUpon>LoadDataDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +62,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LoadDataDialog.resx">
+      <DependentUpon>LoadDataDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToolForm.resx">
       <DependentUpon>ToolForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -15,11 +15,8 @@ namespace MarkdownTableEditor
 {
 	public partial class ToolForm : Form
 	{
+		private DataTable datasource;
 		
-
-		private readonly DataTable datasource;
-
-
 		#region ctor / Load
 		public ToolForm()
 		{
@@ -45,7 +42,67 @@ namespace MarkdownTableEditor
 		#region LoadData
 		private void btnLoadData_Click( object sender, EventArgs e )
 		{
-			MessageBox.Show( "まだ実装してないんや(´・ω・`)" );
+			try
+			{
+				this.LoadData();
+			}
+			catch ( Exception ex )
+			{
+				MessageBox.Show( ex.Message );
+			}
+		}
+		private void LoadData()
+		{
+			LoadDataDialog.MarkdownTable data;
+			if ( this.TryGetData( out data ) )
+			{
+				// ダイアログから読み込んだデータでDataTableを再生成。
+				DataTable dt = new DataTable();
+
+				for ( int i = 0; i < data.Header.Length; i++ )
+				{
+					dt.Columns.Add( "", typeof(string) );
+				}
+
+				AddRow( dt, data.Header );
+
+				foreach ( string[] row in data.Rows )
+				{
+					var rowdata = row.Take( data.Header.Length );
+
+					AddRow( dt, rowdata );
+				}
+
+
+				// ViewにバインドするDatSourceを差し替え。
+				this.dgvInputTable.DataSource = this.datasource = dt;
+
+				// マークダウン変換テキストをクリア。
+				this.txtMarkdownTest.Text = "";
+			}
+		}
+		private bool TryGetData( out LoadDataDialog.MarkdownTable data )
+		{
+			using ( LoadDataDialog dialog = new LoadDataDialog() )
+			{
+				bool ok = dialog.ShowDialog() == DialogResult.OK;
+
+				data = ok ? dialog.Data : null;
+				return ok;
+			}
+		}
+		
+		private static void AddRow( DataTable dt, IEnumerable<string> data)
+		{
+			DataRow row = dt.NewRow();
+
+			int i = 0;
+			foreach ( string s in data )
+			{
+				row[i++] = s;
+			}
+
+			dt.Rows.Add( row );
 		}
 		#endregion
 
