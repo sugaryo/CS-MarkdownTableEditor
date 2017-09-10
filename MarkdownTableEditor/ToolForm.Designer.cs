@@ -76,7 +76,7 @@
 			this.btnLoadData.Location = new System.Drawing.Point(3, 3);
 			this.btnLoadData.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
 			this.btnLoadData.Name = "btnLoadData";
-			this.btnLoadData.Size = new System.Drawing.Size(385, 20);
+			this.btnLoadData.Size = new System.Drawing.Size(385, 30);
 			this.btnLoadData.TabIndex = 0;
 			this.btnLoadData.Text = "↓";
 			this.btnLoadData.UseVisualStyleBackColor = false;
@@ -93,7 +93,7 @@
 			this.btnChangeMarkdown.Location = new System.Drawing.Point(3, 3);
 			this.btnChangeMarkdown.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
 			this.btnChangeMarkdown.Name = "btnChangeMarkdown";
-			this.btnChangeMarkdown.Size = new System.Drawing.Size(361, 20);
+			this.btnChangeMarkdown.Size = new System.Drawing.Size(361, 30);
 			this.btnChangeMarkdown.TabIndex = 1;
 			this.btnChangeMarkdown.Text = "|MARKDOWN|";
 			this.btnChangeMarkdown.UseVisualStyleBackColor = false;
@@ -105,10 +105,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgvInputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvInputTable.Location = new System.Drawing.Point(3, 26);
+			this.dgvInputTable.Location = new System.Drawing.Point(3, 36);
 			this.dgvInputTable.Name = "dgvInputTable";
 			this.dgvInputTable.RowTemplate.Height = 21;
-			this.dgvInputTable.Size = new System.Drawing.Size(385, 432);
+			this.dgvInputTable.Size = new System.Drawing.Size(385, 422);
 			this.dgvInputTable.TabIndex = 1;
 			// 
 			// txtMarkdownTest
@@ -116,12 +116,14 @@
 			this.txtMarkdownTest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtMarkdownTest.Location = new System.Drawing.Point(3, 26);
+			this.txtMarkdownTest.BackColor = System.Drawing.Color.Black;
+			this.txtMarkdownTest.ForeColor = System.Drawing.Color.White;
+			this.txtMarkdownTest.Location = new System.Drawing.Point(3, 36);
 			this.txtMarkdownTest.Multiline = true;
 			this.txtMarkdownTest.Name = "txtMarkdownTest";
 			this.txtMarkdownTest.ReadOnly = true;
 			this.txtMarkdownTest.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.txtMarkdownTest.Size = new System.Drawing.Size(361, 409);
+			this.txtMarkdownTest.Size = new System.Drawing.Size(361, 389);
 			this.txtMarkdownTest.TabIndex = 2;
 			this.txtMarkdownTest.WordWrap = false;
 			// 
@@ -133,10 +135,10 @@
 			this.btnCopyText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnCopyText.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.btnCopyText.ForeColor = System.Drawing.Color.RoyalBlue;
-			this.btnCopyText.Location = new System.Drawing.Point(3, 438);
+			this.btnCopyText.Location = new System.Drawing.Point(3, 428);
 			this.btnCopyText.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
 			this.btnCopyText.Name = "btnCopyText";
-			this.btnCopyText.Size = new System.Drawing.Size(361, 20);
+			this.btnCopyText.Size = new System.Drawing.Size(361, 30);
 			this.btnCopyText.TabIndex = 3;
 			this.btnCopyText.Text = "copy";
 			this.btnCopyText.UseVisualStyleBackColor = false;
