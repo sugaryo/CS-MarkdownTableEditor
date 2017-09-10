@@ -9,6 +9,25 @@ namespace MarkdownTableEditor.Extensions
 {
 	public static class extensions
 	{
+		public static bool isEmpty( this string s )
+		{
+			return string.IsNullOrEmpty( s );
+		}
+		public static bool notEmpty( this string s )
+		{
+			return !s.isEmpty();
+		}
+
+		public static bool isSpace( this string s )
+		{
+			return string.IsNullOrWhiteSpace( s );
+		}
+		public static bool notSpace( this string s )
+		{
+			return !s.isSpace();
+		}
+
+
 		public static string join( this IEnumerable<string> strings, string joinner )
 		{
 			StringBuilder sb = new StringBuilder();
@@ -66,5 +85,23 @@ namespace MarkdownTableEditor.Extensions
 				yield return row[col];
 			}
 		}
+
+
+		private const StringSplitOptions DEFAULT_SPLIT_OPTION = StringSplitOptions.RemoveEmptyEntries;
+
+		public static string[] split( this string s, params string[] by )
+		{
+			return s.Split( by, DEFAULT_SPLIT_OPTION );
+		}
+		public static string[] split( this string s, StringSplitOptions option = DEFAULT_SPLIT_OPTION, params string[] by )
+		{
+			return s.Split( by, option );
+		}
+
+		public static string[] lines( this string s, StringSplitOptions option = DEFAULT_SPLIT_OPTION )
+		{
+			return s.split( option, Environment.NewLine );
+		}
+
 	}
 }
