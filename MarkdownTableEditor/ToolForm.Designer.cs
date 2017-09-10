@@ -69,39 +69,46 @@
 			// 
 			this.btnLoadData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnLoadData.BackColor = System.Drawing.Color.Honeydew;
+			this.btnLoadData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLoadData.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnLoadData.ForeColor = System.Drawing.Color.SeaGreen;
 			this.btnLoadData.Location = new System.Drawing.Point(3, 3);
 			this.btnLoadData.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
 			this.btnLoadData.Name = "btnLoadData";
-			this.btnLoadData.Size = new System.Drawing.Size(385, 40);
+			this.btnLoadData.Size = new System.Drawing.Size(385, 20);
 			this.btnLoadData.TabIndex = 0;
 			this.btnLoadData.Text = "↓";
-			this.btnLoadData.UseVisualStyleBackColor = true;
+			this.btnLoadData.UseVisualStyleBackColor = false;
 			this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
 			// 
 			// btnChangeMarkdown
 			// 
 			this.btnChangeMarkdown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnChangeMarkdown.BackColor = System.Drawing.Color.LavenderBlush;
+			this.btnChangeMarkdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnChangeMarkdown.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnChangeMarkdown.ForeColor = System.Drawing.Color.Crimson;
 			this.btnChangeMarkdown.Location = new System.Drawing.Point(3, 3);
 			this.btnChangeMarkdown.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
 			this.btnChangeMarkdown.Name = "btnChangeMarkdown";
 			this.btnChangeMarkdown.Size = new System.Drawing.Size(361, 20);
 			this.btnChangeMarkdown.TabIndex = 1;
-			this.btnChangeMarkdown.Text = "markdown";
-			this.btnChangeMarkdown.UseVisualStyleBackColor = true;
+			this.btnChangeMarkdown.Text = "|MARKDOWN|";
+			this.btnChangeMarkdown.UseVisualStyleBackColor = false;
 			this.btnChangeMarkdown.Click += new System.EventHandler(this.btnChangeMarkdown_Click);
 			// 
 			// dgvInputTable
 			// 
-			this.dgvInputTable.AllowUserToOrderColumns = true;
 			this.dgvInputTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgvInputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvInputTable.Location = new System.Drawing.Point(3, 46);
+			this.dgvInputTable.Location = new System.Drawing.Point(3, 26);
 			this.dgvInputTable.Name = "dgvInputTable";
 			this.dgvInputTable.RowTemplate.Height = 21;
-			this.dgvInputTable.Size = new System.Drawing.Size(385, 412);
+			this.dgvInputTable.Size = new System.Drawing.Size(385, 432);
 			this.dgvInputTable.TabIndex = 1;
 			// 
 			// txtMarkdownTest
@@ -122,13 +129,17 @@
 			// 
 			this.btnCopyText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnCopyText.BackColor = System.Drawing.Color.Lavender;
+			this.btnCopyText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCopyText.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnCopyText.ForeColor = System.Drawing.Color.RoyalBlue;
 			this.btnCopyText.Location = new System.Drawing.Point(3, 438);
 			this.btnCopyText.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
 			this.btnCopyText.Name = "btnCopyText";
 			this.btnCopyText.Size = new System.Drawing.Size(361, 20);
 			this.btnCopyText.TabIndex = 3;
-			this.btnCopyText.Text = "markdown";
-			this.btnCopyText.UseVisualStyleBackColor = true;
+			this.btnCopyText.Text = "copy";
+			this.btnCopyText.UseVisualStyleBackColor = false;
 			this.btnCopyText.Click += new System.EventHandler(this.btnCopyText_Click);
 			// 
 			// ToolForm
@@ -137,6 +148,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(784, 481);
 			this.Controls.Add(this.split);
+			this.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.Name = "ToolForm";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
 			this.Text = "#MARKDOWN table editor";
