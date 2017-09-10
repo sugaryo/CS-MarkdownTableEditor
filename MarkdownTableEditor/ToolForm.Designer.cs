@@ -30,9 +30,10 @@
 		{
 			this.split = new System.Windows.Forms.SplitContainer();
 			this.btnLoadData = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnChangeMarkdown = new System.Windows.Forms.Button();
 			this.dgvInputTable = new System.Windows.Forms.DataGridView();
 			this.txtMarkdownTest = new System.Windows.Forms.TextBox();
+			this.btnCopyText = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
 			this.split.Panel1.SuspendLayout();
 			this.split.Panel2.SuspendLayout();
@@ -57,8 +58,9 @@
 			// 
 			// split.Panel2
 			// 
+			this.split.Panel2.Controls.Add(this.btnCopyText);
 			this.split.Panel2.Controls.Add(this.txtMarkdownTest);
-			this.split.Panel2.Controls.Add(this.button1);
+			this.split.Panel2.Controls.Add(this.btnChangeMarkdown);
 			this.split.Size = new System.Drawing.Size(766, 463);
 			this.split.SplitterDistance = 393;
 			this.split.TabIndex = 0;
@@ -74,22 +76,27 @@
 			this.btnLoadData.TabIndex = 0;
 			this.btnLoadData.Text = "↓";
 			this.btnLoadData.UseVisualStyleBackColor = true;
+			this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
 			// 
-			// button1
+			// btnChangeMarkdown
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.btnChangeMarkdown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.Location = new System.Drawing.Point(3, 3);
-			this.button1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(361, 40);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "↑";
-			this.button1.UseVisualStyleBackColor = true;
+			this.btnChangeMarkdown.Location = new System.Drawing.Point(3, 3);
+			this.btnChangeMarkdown.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+			this.btnChangeMarkdown.Name = "btnChangeMarkdown";
+			this.btnChangeMarkdown.Size = new System.Drawing.Size(361, 20);
+			this.btnChangeMarkdown.TabIndex = 1;
+			this.btnChangeMarkdown.Text = "markdown";
+			this.btnChangeMarkdown.UseVisualStyleBackColor = true;
+			this.btnChangeMarkdown.Click += new System.EventHandler(this.btnChangeMarkdown_Click);
 			// 
 			// dgvInputTable
 			// 
 			this.dgvInputTable.AllowUserToOrderColumns = true;
+			this.dgvInputTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgvInputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvInputTable.Location = new System.Drawing.Point(3, 46);
 			this.dgvInputTable.Name = "dgvInputTable";
@@ -99,14 +106,30 @@
 			// 
 			// txtMarkdownTest
 			// 
-			this.txtMarkdownTest.Location = new System.Drawing.Point(3, 46);
+			this.txtMarkdownTest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtMarkdownTest.Location = new System.Drawing.Point(3, 26);
 			this.txtMarkdownTest.Multiline = true;
 			this.txtMarkdownTest.Name = "txtMarkdownTest";
 			this.txtMarkdownTest.ReadOnly = true;
 			this.txtMarkdownTest.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.txtMarkdownTest.Size = new System.Drawing.Size(361, 412);
+			this.txtMarkdownTest.Size = new System.Drawing.Size(361, 409);
 			this.txtMarkdownTest.TabIndex = 2;
 			this.txtMarkdownTest.WordWrap = false;
+			// 
+			// btnCopyText
+			// 
+			this.btnCopyText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnCopyText.Location = new System.Drawing.Point(3, 438);
+			this.btnCopyText.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+			this.btnCopyText.Name = "btnCopyText";
+			this.btnCopyText.Size = new System.Drawing.Size(361, 20);
+			this.btnCopyText.TabIndex = 3;
+			this.btnCopyText.Text = "markdown";
+			this.btnCopyText.UseVisualStyleBackColor = true;
+			this.btnCopyText.Click += new System.EventHandler(this.btnCopyText_Click);
 			// 
 			// ToolForm
 			// 
@@ -134,7 +157,8 @@
 		private System.Windows.Forms.DataGridView dgvInputTable;
 		private System.Windows.Forms.Button btnLoadData;
 		private System.Windows.Forms.TextBox txtMarkdownTest;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnChangeMarkdown;
+		private System.Windows.Forms.Button btnCopyText;
 	}
 }
 
