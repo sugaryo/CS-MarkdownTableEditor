@@ -107,5 +107,46 @@ namespace MarkdownTableEditor
 			Clipboard.SetText( text );
 		}
 		#endregion
+
+		#region Add/Del column
+		private void btnAddColumn_Click( object sender, EventArgs e )
+		{
+			try
+			{
+				this.AddColumn();
+			}
+			catch ( Exception ex )
+			{				
+				this.txtMarkdownTest.Text = ex.StackTrace;
+				MessageBox.Show( ex.Message );
+			}
+		}
+
+		private void btnDelColumn_Click( object sender, EventArgs e )
+		{
+			try
+			{
+				this.DelColumn();
+			}
+			catch ( Exception ex )
+			{				
+				this.txtMarkdownTest.Text = ex.StackTrace;
+				MessageBox.Show( ex.Message );
+			}
+		}
+
+		private void AddColumn()
+		{
+			this.datasource.Columns.Add( "", typeof(string) );
+		}
+		private void DelColumn()
+		{
+			int n = this.datasource.Columns.Count;
+
+			if ( 0 == n ) return;
+			
+			this.datasource.Columns.RemoveAt( n - 1 );
+		}
+		#endregion
 	}
 }

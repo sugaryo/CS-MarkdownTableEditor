@@ -34,6 +34,8 @@
 			this.dgvInputTable = new System.Windows.Forms.DataGridView();
 			this.txtMarkdownTest = new System.Windows.Forms.TextBox();
 			this.btnCopyText = new System.Windows.Forms.Button();
+			this.btnAddColumn = new System.Windows.Forms.Button();
+			this.btnDelColumn = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
 			this.split.Panel1.SuspendLayout();
 			this.split.Panel2.SuspendLayout();
@@ -53,6 +55,8 @@
 			// 
 			// split.Panel1
 			// 
+			this.split.Panel1.Controls.Add(this.btnDelColumn);
+			this.split.Panel1.Controls.Add(this.btnAddColumn);
 			this.split.Panel1.Controls.Add(this.dgvInputTable);
 			this.split.Panel1.Controls.Add(this.btnLoadData);
 			// 
@@ -76,7 +80,7 @@
 			this.btnLoadData.Location = new System.Drawing.Point(3, 3);
 			this.btnLoadData.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
 			this.btnLoadData.Name = "btnLoadData";
-			this.btnLoadData.Size = new System.Drawing.Size(385, 30);
+			this.btnLoadData.Size = new System.Drawing.Size(319, 30);
 			this.btnLoadData.TabIndex = 0;
 			this.btnLoadData.Text = "↓";
 			this.btnLoadData.UseVisualStyleBackColor = false;
@@ -144,6 +148,38 @@
 			this.btnCopyText.UseVisualStyleBackColor = false;
 			this.btnCopyText.Click += new System.EventHandler(this.btnCopyText_Click);
 			// 
+			// btnAddColumn
+			// 
+			this.btnAddColumn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnAddColumn.BackColor = System.Drawing.Color.Pink;
+			this.btnAddColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAddColumn.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnAddColumn.ForeColor = System.Drawing.Color.MediumVioletRed;
+			this.btnAddColumn.Location = new System.Drawing.Point(325, 3);
+			this.btnAddColumn.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
+			this.btnAddColumn.Name = "btnAddColumn";
+			this.btnAddColumn.Size = new System.Drawing.Size(30, 30);
+			this.btnAddColumn.TabIndex = 2;
+			this.btnAddColumn.Text = "＋";
+			this.btnAddColumn.UseVisualStyleBackColor = false;
+			this.btnAddColumn.Click += new System.EventHandler(this.btnAddColumn_Click);
+			// 
+			// btnDelColumn
+			// 
+			this.btnDelColumn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnDelColumn.BackColor = System.Drawing.Color.Pink;
+			this.btnDelColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnDelColumn.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnDelColumn.ForeColor = System.Drawing.Color.MediumVioletRed;
+			this.btnDelColumn.Location = new System.Drawing.Point(358, 3);
+			this.btnDelColumn.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
+			this.btnDelColumn.Name = "btnDelColumn";
+			this.btnDelColumn.Size = new System.Drawing.Size(30, 30);
+			this.btnDelColumn.TabIndex = 3;
+			this.btnDelColumn.Text = "－";
+			this.btnDelColumn.UseVisualStyleBackColor = false;
+			this.btnDelColumn.Click += new System.EventHandler(this.btnDelColumn_Click);
+			// 
 			// ToolForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -173,6 +209,8 @@
 		private System.Windows.Forms.TextBox txtMarkdownTest;
 		private System.Windows.Forms.Button btnChangeMarkdown;
 		private System.Windows.Forms.Button btnCopyText;
+		private System.Windows.Forms.Button btnDelColumn;
+		private System.Windows.Forms.Button btnAddColumn;
 	}
 }
 
