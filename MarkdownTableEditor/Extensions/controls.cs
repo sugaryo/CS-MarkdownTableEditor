@@ -36,5 +36,40 @@ namespace MarkdownTableEditor.Extensions
 				txt.SelectAll();
 			}
 		}
+
+
+		#region IEnumerable<Control>
+		public static IEnumerable<Control> children( this Form form )
+		{
+			foreach ( Control control in form.Controls )
+			{
+				var each = Each( control );
+				foreach ( var c in each )
+				{
+					yield return c;
+				}
+			}
+		}
+		public static IEnumerable<Control> children( this Control parent )
+		{
+			return Each( parent );
+		}
+		private static IEnumerable<Control> Each( Control current )
+		{
+			foreach ( Control c in current.Controls )
+			{
+				yield return c;
+
+				if ( c.HasChildren )
+				{
+					var each = Each( c );
+					foreach ( Control x in each )
+					{
+						yield return x;
+					}
+				}
+			}
+		}
+		#endregion
 	}
 }
