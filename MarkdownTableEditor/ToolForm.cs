@@ -36,6 +36,58 @@ namespace MarkdownTableEditor
 			txts.ctrl_a();
 
 			this.dgvInputTable.DataSource = this.datasource;
+
+
+			this.MouseWheel += ToolForm_MouseWheel;
+			this.SetFontSize( 12f );
+		}
+		private void ToolForm_MouseWheel( object sender, MouseEventArgs e )
+		{
+			bool ctrl = ( Control.ModifierKeys & Keys.Control ) == Keys.Control;
+
+			if ( ctrl )
+			{
+				bool up = e.Delta > 0;
+
+				float size = this.Font.Size;
+
+				
+				this.SetFontSize( up
+						? Math.Min( size + 2f, 32f )
+						: Math.Max( size - 2f, 8f ) 
+				);
+			}
+		}
+		private void SetFontSize( float size )
+		{
+			// 新しいフォントの生成。
+			Font f = this.Font.resize( size );
+
+			// 新しいフォントの設定。
+			this.Font = f;
+			var copy = this.children()
+				.Where( x => x is Button
+						  || x is TextBox
+						  || x is DataGridView );
+			foreach ( var c in copy )
+			{
+				c.Font = this.Font;
+			}
+
+
+			// フォント設定に伴うDataGridViewのサイズ変更。
+			this.dgvInputTable.RowTemplate.Height = f.Height + 2;
+			foreach ( DataGridViewRow row in this.dgvInputTable.Rows )
+			{
+				row.Height = this.dgvInputTable.RowTemplate.Height;
+			}
+
+			// フォント設定に伴うSplitContainerのサイズ補正。
+			// スクリーンサイズ以上にぶっ飛んじゃうとレイアウトが崩れるので。
+			Size cs = this.ClientSize;
+			this.split.Size = new Size( 
+					cs.Width  - 20, 
+					cs.Height - 20 );
 		}
 		#endregion
 
